@@ -1,8 +1,10 @@
 {
   "name": "hrepl",
   "version": "1.0.0",
-  "description": "",
-  "bin": "./cmd.js",
+  "description": "> Hydrate-Read-Eval-Print-Loop",
+  "bin": {
+    "hrepl": "cmd.js"
+  },
   "main": "cmd.js",
   "type": "module",
   "scripts": {
@@ -10,5 +12,13 @@
   },
   "keywords": [],
   "author": "",
-  "license": "MIT"
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hypercore-protocol/hrepl.git"
+  },
+  "bugs": {
+    "url": "https://github.com/hypercore-protocol/hrepl/issues"
+  },
+  "homepage": "https://github.com/hypercore-protocol/hrepl#readme"
 }
