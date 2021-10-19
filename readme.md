@@ -29,6 +29,27 @@ The `process.argv` array will look as if the file has been run directly with Nod
 
 In the example case, `process.argv` will be `[<exec path>, 'path/to/file.js', '--some', 'args'].
 
+## Commands
+
+The repl includes a `.log` command for async (or sync) iteration:
+
+```sh
+> async function * f () { yield 1; yield 2; yield 3 }
+> o = f()
+Object [AsyncGenerator] {}
+> .log o
+try { for await (const data of o) console.log(data) } catch { console.log(o) }
+1
+2
+3
+> .log [1,2,3]
+try { for await (const data of [1,2,3]) console.log(data) } catch { console.log([1, 2, 3]) }
+1
+2
+3
+```
+
+
 ## Install
 
 ```sh
