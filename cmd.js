@@ -12,7 +12,8 @@ Object.assign(global, api)
 console.log('API:', Object.entries(api).map(([k, v]) => `${k} (${Array.isArray(v) ? 'array' : typeof v})`).join(', '))
 const repl = start({ 
   ignoreUndefined: true,
-  removeHistoryDuplicates: true
+  removeHistoryDuplicates: true,
+  breakEvalOnSigint: true
 })
 const history = new URL(import.meta.url).pathname.replace('cmd.js', 'history.txt')
 repl.setupHistory(history, () => {})
