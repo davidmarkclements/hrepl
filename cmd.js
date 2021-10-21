@@ -21,7 +21,7 @@ repl.setupHistory(history, () => {})
 repl.defineCommand('log', {
   help: 'Advanced iterative logging',
   async action (o) {
-    repl.once('history', async (h) => { h.shift() })
+    repl.once('history', (h) => { h.shift() })
     repl.write(`try { for await (const data of ${o}) console.log(data) } catch { console.log(${o}) }\n`)
   }
 })
